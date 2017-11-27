@@ -1,7 +1,7 @@
 package cn.ocoop.framework.mybatis.plugin.paging;
 
-import cn.ocoop.framework.mybatis.plugin.paging.sql.MySqlRemoveOrderByOptimizer;
-import cn.ocoop.framework.mybatis.plugin.paging.sql.MySqlReplaceSelectItemToCountOptimizer;
+import cn.ocoop.framework.sql.MySqlRemoveOrderByOptimizer;
+import cn.ocoop.framework.sql.MySqlReplaceSelectItemToCountOptimizer;
 import org.apache.ibatis.cache.CacheKey;
 import org.apache.ibatis.executor.Executor;
 import org.apache.ibatis.mapping.BoundSql;
