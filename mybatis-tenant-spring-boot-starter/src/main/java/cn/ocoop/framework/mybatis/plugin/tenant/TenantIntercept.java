@@ -43,7 +43,7 @@ public class TenantIntercept implements Interceptor {
 
     @Override
     public Object intercept(Invocation invocation) throws Throwable {
-        if (TC.getTenantId() == null) {
+        if (TC.get() == null) {
             log.warn("tenant id is not present through TC.set(o),tenant filter is disabled");
             return invocation.proceed();
         }
