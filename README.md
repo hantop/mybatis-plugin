@@ -24,7 +24,7 @@ mybatis-plugin
     <dependency>
         <groupId>cn.ocoop.framework</groupId>
         <artifactId>mybatis-paging-spring-boot-starter</artifactId>
-        <version>1.0</version>
+        <version>1.1</version>
     </dependency>
 ```
 正如你看到的，就那么多，你便可以实现自动分页了,除此之外你什么都不需要做
