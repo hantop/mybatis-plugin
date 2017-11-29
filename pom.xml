@@ -147,16 +147,6 @@
             <artifactId>lombok</artifactId>
             <scope>provided</scope>
         </dependency>
-        <dependency>
-            <groupId>cn.ocoop.framework.mybatis.plugin</groupId>
-            <artifactId>mybatis-tenant-spring-boot-starter</artifactId>
-            <version>${version}</version>
-        </dependency>
-        <dependency>
-            <groupId>cn.ocoop.framework.mybatis.plugin</groupId>
-            <artifactId>mybatis-paging-spring-boot-starter</artifactId>
-            <version>${version}</version>
-        </dependency>
     </dependencies>
     <build>
         <plugins>
