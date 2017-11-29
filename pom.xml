@@ -1,10 +1,10 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://maven.apache.org/POM/4.0.0"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>cn.ocoop.framework.mybatis.plugin</groupId>
     <artifactId>mybatis-plugin-spring-boot-starter</artifactId>
-    <version>1.0</version>
+    <version>1.1</version>
     <modules>
         <module>mybatis-paging-spring-boot-starter</module>
         <module>mybatis-tenant-spring-boot-starter</module>
@@ -112,7 +112,7 @@
         <spring-boot.version>1.5.8.RELEASE</spring-boot.version>
         <mybatis.starter.version>1.3.1</mybatis.starter.version>
         <lombok.version>1.16.18</lombok.version>
-        <sql-util.version>1.0</sql-util.version>
+        <sql-util.version>1.1</sql-util.version>
     </properties>
 
     <dependencyManagement>
@@ -146,6 +146,16 @@
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
             <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>cn.ocoop.framework.mybatis.plugin</groupId>
+            <artifactId>mybatis-tenant-spring-boot-starter</artifactId>
+            <version>${version}</version>
+        </dependency>
+        <dependency>
+            <groupId>cn.ocoop.framework.mybatis.plugin</groupId>
+            <artifactId>mybatis-paging-spring-boot-starter</artifactId>
+            <version>${version}</version>
         </dependency>
     </dependencies>
     <build>

@@ -71,7 +71,7 @@ public Page<Order> getOrder(Order order) {
 <dependency>
     <groupId>cn.ocoop.framework.mybatis.plugin</groupId>
     <artifactId>mybatis-tenant-spring-boot-starter</artifactId>
-    <version>1.0</version>
+    <version>1.1</version>
 </dependency>
 ```
 使用该starter你需要做一些mybatis-spring-boot-starter的配置，不过这很简单，例如：
@@ -82,9 +82,14 @@ mybatis:
     map-underscore-to-camel-case: true
   configuration-properties:
     #这个配置是我们插件的，表示商户ID在数据库的列名
-    tenantColumn : merchant_id 
-    #这个配置是我们插件的，标识商户ID在数据库的数据类型，支持String/Number，正确的数据类型能够更好的使用索引
+    tenantColumn : TENANT_ID 
+    #这个配置是我们插件的，表示商户ID在数据库的数据类型，支持String/Number，正确的数据类型能够更好的使用索引
     tenantColumnType : Number
+    #这个配置是我们插件的，表示插件特定类型的sql是否启用
+    tenantInsertEnabled : true
+    tenantDeleteEnabled : true
+    tenantUpdateEnabled : true
+    tenantSelectEnabled : true
 ```
 >_**如果你还没见过这种配置，请参照下spring-boot yaml配置方式，并参阅[mybatis-spring-boot-starter](https://github.com/mybatis/spring-boot-starter "https://github.com/mybatis/spring-boot-starter")**_
 
