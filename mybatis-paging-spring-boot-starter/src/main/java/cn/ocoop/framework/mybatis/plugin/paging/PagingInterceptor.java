@@ -77,8 +77,8 @@ public class PagingInterceptor implements Interceptor {
                 id_mappedStatement.put(countMappedStatementId, countMappedStatement);
             }
 
-            String countSql = new MySqlRemoveOrderByOptimizer().optimize(boundSql.getSql()).get(0);
-            countSql = new MySqlReplaceSelectItemToCountOptimizer().optimize(countSql).get(0);
+            String countSql = new MySqlRemoveOrderByOptimizer().optimize(boundSql.getSql());
+            countSql = new MySqlReplaceSelectItemToCountOptimizer().optimize(countSql);
             BoundSql countBoundSql = new BoundSql(countMappedStatement.getConfiguration(), countSql, boundSql.getParameterMappings(), parameter);
             for (String key : additionalParameters.keySet()) {
                 countBoundSql.setAdditionalParameter(key, additionalParameters.get(key));

@@ -63,13 +63,13 @@ public class TenantIntercept implements Interceptor {
         BoundSql boundSql = (BoundSql) metaObject.getValue("delegate.boundSql");
         String optimizedSql = boundSql.getSql();
         if (INSERT_ENABLED && SqlCommandType.INSERT.equals(mappedStatement.getSqlCommandType())) {
-            optimizedSql = new MySqlInsertTenantOptimizer(TENANT_COLUMN, TENANT_COLUMN_TYPE).optimize(optimizedSql).get(0);
+            optimizedSql = new MySqlInsertTenantOptimizer(TENANT_COLUMN, TENANT_COLUMN_TYPE).optimize(optimizedSql);
         } else if (DELETE_ENABLED && SqlCommandType.DELETE.equals(mappedStatement.getSqlCommandType())) {
-            optimizedSql = new MySqlDeleteTenantOptimizer(TENANT_COLUMN, TENANT_COLUMN_TYPE).optimize(optimizedSql).get(0);
+            optimizedSql = new MySqlDeleteTenantOptimizer(TENANT_COLUMN, TENANT_COLUMN_TYPE).optimize(optimizedSql);
         } else if (UPDATE_ENABLED && SqlCommandType.UPDATE.equals(mappedStatement.getSqlCommandType())) {
-            optimizedSql = new MySqlUpdateTenantOptimizer(TENANT_COLUMN, TENANT_COLUMN_TYPE).optimize(optimizedSql).get(0);
+            optimizedSql = new MySqlUpdateTenantOptimizer(TENANT_COLUMN, TENANT_COLUMN_TYPE).optimize(optimizedSql);
         } else if (SELECT_ENABLED && SqlCommandType.SELECT.equals(mappedStatement.getSqlCommandType())) {
-            optimizedSql = new MySqlSelectTenantOptimizer(TENANT_COLUMN, TENANT_COLUMN_TYPE).optimize(optimizedSql).get(0);
+            optimizedSql = new MySqlSelectTenantOptimizer(TENANT_COLUMN, TENANT_COLUMN_TYPE).optimize(optimizedSql);
         }
         metaObject.setValue("delegate.boundSql.sql", optimizedSql);
         return invocation.proceed();

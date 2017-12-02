@@ -24,7 +24,7 @@ mybatis-plugin
     <dependency>
         <groupId>cn.ocoop.framework</groupId>
         <artifactId>mybatis-paging-spring-boot-starter</artifactId>
-        <version>1.1</version>
+        <version>1.2</version>
     </dependency>
 ```
 正如你看到的，就那么多，你便可以实现自动分页了,除此之外你什么都不需要做
@@ -71,7 +71,7 @@ public Page<Order> getOrder(Order order) {
 <dependency>
     <groupId>cn.ocoop.framework.mybatis.plugin</groupId>
     <artifactId>mybatis-tenant-spring-boot-starter</artifactId>
-    <version>1.1</version>
+    <version>1.2</version>
 </dependency>
 ```
 使用该starter你需要做一些mybatis-spring-boot-starter的配置，不过这很简单，例如：
